@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap-table.css" rel="stylesheet">
+    <script src="js/jquery/jquery-2.1.0.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/bootstrap-table.js"></script>
+    <script src="bootstrap/js/bootstrap-table-CN.js"></script>
+    <script src="js/echarts/echarts.min.js"></script>
+    <script src="js/echarts/world.js"></script>
+    <style>
+        html,body{
+            height: 100%;
+            width:100%;
+            box-sizing: border-box;
+        }
+        .myborder{
+            border:1px solid #3c3c3c;
+        }
+        .myborder-right{
+            border-right:1px solid #3c3c3c;
+        }
+        .myborder-bottom{
+            border-bottom:1px solid #3c3c3c;
+        }
+        .mar-pad-clear{
+            margin:0;
+            padding:0;
+        }
+        .fill100{
+            height: 100%;
+            width: 100%;
+        }
+        .tb-font{
+        	font-size:12px;
+        }
+        @media screen and (min-width:2000px){
+        	.tb-font{
+        		font-size:16px;
+        	}
+        }
+        #info td{
+            border: none;
+        }
+        #tb_div{
+            margin-left:20px;
+            margin-right:20px;
+            margin-top: 50px;
+            border:1px solid #3c3c3c;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mar-pad-clear fill100">
+        <div class="row clearfix mar-pad-clear" style="height: 50%;">
+            <div id="scatter" class="col-lg-4 myborder" style="height: 100%;"></div>
+            <div id="tb_1_div" class="col-lg-4 myborder" style="height: 100%;">
+                <table id="tb_departments" class="tb-font"></table>
+            </div>
+            <div class="col-lg-4 myborder mar-pad-clear" style="height: 100%;">
+                <div class="row clearfix mar-pad-clear" style="height: 100%;">
+                    <div class="col-lg-12 myborder-right mar-pad-clear" style="height: 100%">
+                        <div class="row clearfix mar-pad-clear" style="height: 70%">
+                            <div class="col-lg-7 myborder-right myborder-bottom mar-pad-clear" style="height: 100%;">
+                                <div id="tb_div">
+                                	<center><h3>IP详细信息</h3></center>
+                                    <table id="info" class="table">
+                                        <tr>
+                                            <td>asn：</td>
+                                            <td id="asn"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>网段：</td>
+                                            <td id="net-seg"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>国家：</td>
+                                            <td id="country"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>注册日期：</td>
+                                            <td id="date"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>IP范围：</td>
+                                            <td id="IP-range"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>地址：</td>
+                                            <td id="address"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>e-mail：</td>
+                                            <td id="e-mail"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>域名：</td>
+                                            <td id="reaml-name"></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-lg-5" style="height: 100%;"></div>
+                        </div>
+                        <div class="row clearfix mar-pad-clear" style="height: 30%">
+                            <div class="col-lg-6 myborder-right" style="height: 100%;">
+                                <table id="tb_3"></table>
+                            </div>
+                            <div class="col-lg-6" style="height: 100%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix mar-pad-clear" style="height: 50%;">
+            <div id="map" class="col-lg-4 myborder" style="height: 100%;"></div>
+            <div class="col-lg-4 myborder" style="height: 100%;">
+                <div class="row clearfix mar-pad-clear">
+                    <div class="col-lg-6 mar-pad-clear">
+                        <table id="tb_4"></table>
+                    </div>
+                    <div class="col-lg-6 mar-pad-clear"></div>
+                </div>
+            </div>
+            <div class="col-lg-4 myborder" style="height: 100%;"></div>
+        </div>
+    </div>
+    <div style="display:none">
+    	<table id="hidden_table"></table>
+    </div>
+</body>
+<script src="js/custom/load.js"></script>
+</html>
